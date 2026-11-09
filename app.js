@@ -5,6 +5,7 @@
 /*--------- Variables (state) ----------------------------*/
 let currentPlayer = 'X'
 let isGameOver = false
+let moveCount = 0
 
 
 /*----- Cached Element References ------------------------*/
@@ -20,6 +21,8 @@ const sqr6El = document.getElementById('6')
 const sqr7El = document.getElementById('7')
 const sqr8El = document.getElementById('8')
 
+const resetbtnEl = document.getElementById('reset')
+
 // console.log(sqr1El, sqr2El, sqr3El, sqr4El, sqr5El, sqr6El, sqr7El, sqr8El)
 
 /*------------- Functions --------------------------------*/
@@ -33,6 +36,7 @@ sqr0El.addEventListener('click', () => {
         return
     } else {
         sqr0El.textContent = currentPlayer
+        moveCount++
         if (
             (sqr0El.textContent === currentPlayer && sqr1El.textContent === currentPlayer && sqr2El.textContent === currentPlayer) ||
             (sqr3El.textContent === currentPlayer && sqr4El.textContent === currentPlayer && sqr5El.textContent === currentPlayer) ||
@@ -43,10 +47,17 @@ sqr0El.addEventListener('click', () => {
             (sqr0El.textContent === currentPlayer && sqr4El.textContent === currentPlayer && sqr8El.textContent === currentPlayer) ||
             (sqr2El.textContent === currentPlayer && sqr4El.textContent === currentPlayer && sqr6El.textContent === currentPlayer)
             ) {
-            message.textContent = `${currentPlayer} wins!`
+            messageEl.textContent = `${currentPlayer} wins!`
             isGameOver = true
             return
         }
+        if ( moveCount === 9 && isGameOver === false){
+
+                    messageEl.textContent =`It's a tie!`
+            isGameOver = true
+            return
+        }
+
         if(currentPlayer === 'X'){
             currentPlayer = 'O'
         } else {
@@ -61,6 +72,7 @@ sqr1El.addEventListener('click', () => {
         return
     } else {
         sqr1El.textContent = currentPlayer
+        moveCount++
         if (
             (sqr0El.textContent === currentPlayer && sqr1El.textContent === currentPlayer && sqr2El.textContent === currentPlayer) ||
             (sqr3El.textContent === currentPlayer && sqr4El.textContent === currentPlayer && sqr5El.textContent === currentPlayer) ||
@@ -71,7 +83,13 @@ sqr1El.addEventListener('click', () => {
             (sqr0El.textContent === currentPlayer && sqr4El.textContent === currentPlayer && sqr8El.textContent === currentPlayer) ||
             (sqr2El.textContent === currentPlayer && sqr4El.textContent === currentPlayer && sqr6El.textContent === currentPlayer)
             ) {
-            message.textContent = `${currentPlayer} wins!`
+            messageEl.textContent = `${currentPlayer} wins!`
+            isGameOver = true
+            return
+        }
+        if ( moveCount === 9 && isGameOver === false){
+
+                    messageEl.textContent =`It's a tie!`
             isGameOver = true
             return
         }
@@ -89,6 +107,7 @@ sqr2El.addEventListener('click', () => {
         return
     } else {
         sqr2El.textContent = currentPlayer
+        moveCount++
         if (
             (sqr0El.textContent === currentPlayer && sqr1El.textContent === currentPlayer && sqr2El.textContent === currentPlayer) ||
             (sqr3El.textContent === currentPlayer && sqr4El.textContent === currentPlayer && sqr5El.textContent === currentPlayer) ||
@@ -99,7 +118,13 @@ sqr2El.addEventListener('click', () => {
             (sqr0El.textContent === currentPlayer && sqr4El.textContent === currentPlayer && sqr8El.textContent === currentPlayer) ||
             (sqr2El.textContent === currentPlayer && sqr4El.textContent === currentPlayer && sqr6El.textContent === currentPlayer)
             ) {
-            message.textContent = `${currentPlayer} wins!`
+            messageEl.textContent = `${currentPlayer} wins!`
+            isGameOver = true
+            return
+        }
+        if ( moveCount === 9 && isGameOver === false){
+
+                    messageEl.textContent =`It's a tie!`
             isGameOver = true
             return
         }
@@ -117,6 +142,7 @@ sqr3El.addEventListener('click', () => {
         return
     } else {
         sqr3El.textContent = currentPlayer
+        moveCount++
         if (
             (sqr0El.textContent === currentPlayer && sqr1El.textContent === currentPlayer && sqr2El.textContent === currentPlayer) ||
             (sqr3El.textContent === currentPlayer && sqr4El.textContent === currentPlayer && sqr5El.textContent === currentPlayer) ||
@@ -127,7 +153,13 @@ sqr3El.addEventListener('click', () => {
             (sqr0El.textContent === currentPlayer && sqr4El.textContent === currentPlayer && sqr8El.textContent === currentPlayer) ||
             (sqr2El.textContent === currentPlayer && sqr4El.textContent === currentPlayer && sqr6El.textContent === currentPlayer)
             ) {
-            message.textContent = `${currentPlayer} wins!`
+            messageEl.textContent = `${currentPlayer} wins!`
+            isGameOver = true
+            return
+        }
+        if ( moveCount === 9 && isGameOver === false){
+
+                    messageEl.textContent =`It's a tie!`
             isGameOver = true
             return
         }
@@ -145,6 +177,7 @@ sqr4El.addEventListener('click', () => {
         return
     } else {
         sqr4El.textContent = currentPlayer
+        moveCount++
         if (
             (sqr0El.textContent === currentPlayer && sqr1El.textContent === currentPlayer && sqr2El.textContent === currentPlayer) ||
             (sqr3El.textContent === currentPlayer && sqr4El.textContent === currentPlayer && sqr5El.textContent === currentPlayer) ||
@@ -155,7 +188,13 @@ sqr4El.addEventListener('click', () => {
             (sqr0El.textContent === currentPlayer && sqr4El.textContent === currentPlayer && sqr8El.textContent === currentPlayer) ||
             (sqr2El.textContent === currentPlayer && sqr4El.textContent === currentPlayer && sqr6El.textContent === currentPlayer)
             ) {
-            message.textContent = `${currentPlayer} wins!`
+            messageEl.textContent = `${currentPlayer} wins!`
+            isGameOver = true
+            return
+        }
+        if ( moveCount === 9 && isGameOver === false){
+
+                    messageEl.textContent =`It's a tie!`
             isGameOver = true
             return
         }
@@ -173,6 +212,7 @@ sqr5El.addEventListener('click', () => {
         return
     } else {
         sqr5El.textContent = currentPlayer
+        moveCount++
         if (
             (sqr0El.textContent === currentPlayer && sqr1El.textContent === currentPlayer && sqr2El.textContent === currentPlayer) ||
             (sqr3El.textContent === currentPlayer && sqr4El.textContent === currentPlayer && sqr5El.textContent === currentPlayer) ||
@@ -183,7 +223,13 @@ sqr5El.addEventListener('click', () => {
             (sqr0El.textContent === currentPlayer && sqr4El.textContent === currentPlayer && sqr8El.textContent === currentPlayer) ||
             (sqr2El.textContent === currentPlayer && sqr4El.textContent === currentPlayer && sqr6El.textContent === currentPlayer)
             ) {
-            message.textContent = `${currentPlayer} wins!`
+            messageEl.textContent = `${currentPlayer} wins!`
+            isGameOver = true
+            return
+        }
+        if ( moveCount === 9 && isGameOver === false){
+
+                    messageEl.textContent =`It's a tie!`
             isGameOver = true
             return
         }
@@ -201,6 +247,7 @@ sqr6El.addEventListener('click', () => {
         return
     } else {
         sqr6El.textContent = currentPlayer
+        moveCount++
         if (
             (sqr0El.textContent === currentPlayer && sqr1El.textContent === currentPlayer && sqr2El.textContent === currentPlayer) ||
             (sqr3El.textContent === currentPlayer && sqr4El.textContent === currentPlayer && sqr5El.textContent === currentPlayer) ||
@@ -211,7 +258,13 @@ sqr6El.addEventListener('click', () => {
             (sqr0El.textContent === currentPlayer && sqr4El.textContent === currentPlayer && sqr8El.textContent === currentPlayer) ||
             (sqr2El.textContent === currentPlayer && sqr4El.textContent === currentPlayer && sqr6El.textContent === currentPlayer)
             ) {
-            message.textContent = `${currentPlayer} wins!`
+            messageEl.textContent = `${currentPlayer} wins!`
+            isGameOver = true
+            return
+        }
+        if ( moveCount === 9 && isGameOver === false){
+
+                    messageEl.textContent =`It's a tie!`
             isGameOver = true
             return
         }
@@ -229,6 +282,7 @@ sqr7El.addEventListener('click', () => {
         return
     } else {
         sqr7El.textContent = currentPlayer
+        moveCount++
         if (
             (sqr0El.textContent === currentPlayer && sqr1El.textContent === currentPlayer && sqr2El.textContent === currentPlayer) ||
             (sqr3El.textContent === currentPlayer && sqr4El.textContent === currentPlayer && sqr5El.textContent === currentPlayer) ||
@@ -240,6 +294,48 @@ sqr7El.addEventListener('click', () => {
             (sqr2El.textContent === currentPlayer && sqr4El.textContent === currentPlayer && sqr6El.textContent === currentPlayer)
             ) {
             message.textContent = `${currentPlayer} wins!`
+            isGameOver = true
+            return
+        }
+        if ( moveCount === 9 && isGameOver === false){
+
+                    messageEl.textContent =`It's a tie!`
+            isGameOver = true
+            return
+        }
+        if(currentPlayer === 'X'){
+            currentPlayer = 'O'
+        } else {
+            currentPlayer = 'X'
+        }
+        messageEl.textContent = `It's ${currentPlayer}'s turn`
+    }
+
+})
+sqr8El.addEventListener('click', () => {
+    if (sqr8El.textContent !== '' || isGameOver === true) {
+        console.log('the square is not empty')
+        return
+    } else {
+        sqr8El.textContent = currentPlayer
+        moveCount++
+        if (
+            (sqr0El.textContent === currentPlayer && sqr1El.textContent === currentPlayer && sqr2El.textContent === currentPlayer) ||
+            (sqr3El.textContent === currentPlayer && sqr4El.textContent === currentPlayer && sqr5El.textContent === currentPlayer) ||
+            (sqr6El.textContent === currentPlayer && sqr7El.textContent === currentPlayer && sqr8El.textContent === currentPlayer) ||
+            (sqr0El.textContent === currentPlayer && sqr3El.textContent === currentPlayer && sqr6El.textContent === currentPlayer) ||
+            (sqr1El.textContent === currentPlayer && sqr4El.textContent === currentPlayer && sqr7El.textContent === currentPlayer) ||
+            (sqr2El.textContent === currentPlayer && sqr5El.textContent === currentPlayer && sqr8El.textContent === currentPlayer) ||
+            (sqr0El.textContent === currentPlayer && sqr4El.textContent === currentPlayer && sqr8El.textContent === currentPlayer) ||
+            (sqr2El.textContent === currentPlayer && sqr4El.textContent === currentPlayer && sqr6El.textContent === currentPlayer)
+            ) {
+            messageEl.textContent = `${currentPlayer} wins!`
+            isGameOver = true
+            return
+        }
+        if ( moveCount === 9 && isGameOver === false){
+
+                    messageEl.textContent =`It's a tie!`
             isGameOver = true
             return
         }
@@ -251,31 +347,21 @@ sqr7El.addEventListener('click', () => {
         messageEl.textContent = `It's ${currentPlayer}'s turn`
     }
 })
-sqr8El.addEventListener('click', () => {
-    if (sqr8El.textContent !== '' || isGameOver === true) {
-        console.log('the square is not empty')
-        return
-    } else {
-        sqr8El.textContent = currentPlayer
-        if (
-            (sqr0El.textContent === currentPlayer && sqr1El.textContent === currentPlayer && sqr2El.textContent === currentPlayer) ||
-            (sqr3El.textContent === currentPlayer && sqr4El.textContent === currentPlayer && sqr5El.textContent === currentPlayer) ||
-            (sqr6El.textContent === currentPlayer && sqr7El.textContent === currentPlayer && sqr8El.textContent === currentPlayer) ||
-            (sqr0El.textContent === currentPlayer && sqr3El.textContent === currentPlayer && sqr6El.textContent === currentPlayer) ||
-            (sqr1El.textContent === currentPlayer && sqr4El.textContent === currentPlayer && sqr7El.textContent === currentPlayer) ||
-            (sqr2El.textContent === currentPlayer && sqr5El.textContent === currentPlayer && sqr8El.textContent === currentPlayer) ||
-            (sqr0El.textContent === currentPlayer && sqr4El.textContent === currentPlayer && sqr8El.textContent === currentPlayer) ||
-            (sqr2El.textContent === currentPlayer && sqr4El.textContent === currentPlayer && sqr6El.textContent === currentPlayer)
-            ) {
-            message.textContent = `${currentPlayer} wins!`
-            isGameOver = true
-            return
-        }
-        if(currentPlayer === 'X'){
-            currentPlayer = 'O'
-        } else {
-            currentPlayer = 'X'
-        }
-        messageEl.textContent = `It's ${currentPlayer}'s turn`
-    }
+
+resetbtnEl.addEventListener('cllck', () => {
+    sqr0El.textContent = ''
+    sqr1El.textContent = ''
+    sqr2El.textContent = ''
+    sqr3El.textContent = ''
+    sqr4El.textContent = ''
+    sqr5El.textContent = ''
+    sqr6El.textContent = ''
+    sqr7El.textContent = ''
+    sqr8El.textContent = ''
+    
+    currentPlayer = 'X'
+    isGameOver = false
+    moveCount =0
+    messageEl.textContent = `It's ${currentPlayer}'s turn`
+    
 })
