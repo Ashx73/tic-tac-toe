@@ -278,4 +278,5 @@ sqr8El.addEventListener('click', () => {
         }
         messageEl.textContent = `It's ${currentPlayer}'s turn`
     }
+
 })
